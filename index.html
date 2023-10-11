@@ -5,11 +5,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note App</title>
     <link rel="stylesheet" href="/apps/styles/style.css">
+    
+    <!-- link to integrate icons -->
+    <script src="https://kit.fontawesome.com/1ae22d8cef.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+    <!-- I do not like using one individual container -->
     <div class="container">
 
     </div>
+
+    <!-- header -->
+
+    <div class="header">
+
+        <!-- profile -->
+        <div class="profile">
+            <div class="profile-img">
+
+            </div>
+            <div class="username-text">
+                Ogheneserome Aramiyor
+            </div>
+            <div class="profile-rank">
+                <span></span><p>Admin</p>
+            </div>
+        </div>
+
+        <!-- folders -->
+        <div class="folders">
+            <li><i class="fa-solid fa-house"></i><span>Home</span></li>
+            <li><i class="fa-solid fa-star"></i><span>Stared</span></li>
+            <li><i class="fa-solid fa-file-pen"></i><span>Drafts</span></li>
+            <li><i class="fa-solid fa-trash"></i><span>Trash</span></li>
+        </div>
+
+        <!-- categories -->
+        <div class="categories">
+            <li><span class="categories-label dark-blue"></span><span>Personal</span></li>
+            <li><span class="categories-label dark-yellow"></span><span>Work</span></li>
+            <li><span class="categories-label cyan"></span><span>Family</span></li>
+            <li><span class="categories-label deep-red"></span><span>Others</span></li>
+        </div>
+        <div class="logout-btn">
+            LOGOUT
+        </div>
+    </div>
+
+    <!-- app -->
+
+    <div class="app">
+
+        <!-- note search bar -->
+        <div class="search-bar">
+            <form>
+                <input type="text" placeholder="Search">
+                <!-- search icon -->
+            </form>
+        </div>
+
+        <!-- note container -->
+        <div class="note-item-container" id="random">
+            <div class="note-item">
+                <div class="note-head">
+                    Wow
+                </div>
+                <div class="note-body">
+                    This is the first thing on this list for sure
+                </div>
+                <div class="note-date-and-style">
+                    <span class="date">2 sec ago</span>
+                    <span class="style-color"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- add new note btn -->
+        <div class="new-note-btn-container">
+            <img src="assets/images/add_standard.png" alt="ADD NEW" class="new-note-add-btn">
+        </div>
+        
+    </div>
+
+    <!-- viewer -->
+
+    <div class="viewer">
+
+        <!-- viewer-header -->
+        <div class="viewer-header">
+            <div class="viewer-exit-btn">
+                <i class="fa-solid fa-arrow-left main-exit-btn"></i>
+            </div>
+            <div class="viewer-accessibility-btns">
+                <i class="fa-regular fa-star"></i>
+                <i class="fa-solid fa-file-pen"></i>
+                <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="viewer-color"></div>
+        </div>
+
+        <!-- viewer-content -->
+        <div class="viewer-content">
+            <div class="viewer-content-heading"></div>
+            <pre class="viewer-content-paragraph"></pre>
+        </div>
+        <i class="fa-solid fa-pen"></i>
+
+    </div>
+
+    <!-- editor -->
+
+    <div class="editor-container">
+        <div class="editor">
+            <div class="editor-header">
+                <!-- <i class="fa-solid fa-arrow-left main-exit-btn"></i> -->
+                <span>Add Note</span>
+                <span><--</span>
+            </div>
+            <div class="editor-body">
+                <div class="editor-body-main">
+                    <span>Note Title</span>
+                    <input type="text" id="input-head-text">
+                    <span>Note</span>
+                    <textarea id="input-body-text"></textarea>
+                    <span>Min character allowed 1</span>
+                </div>
+                <div class="editor-body-side">
+                    <span>Select category</span>
+                    <form>
+                        <input type="radio" name="note-category" value="male" checked> Personal<br>
+                        <input type="radio" name="note-category" value="female"> Family<br>
+                        <input type="radio" name="note-category" value="other"> Work<br>
+                        <input type="radio" name="note-category" value="other"> Others
+                    </form>                    
+                </div>
+            </div>
+            <div class="editor-footer">
+                <div class="editor-footer-btn-container">
+                    <button type="button">Cancel</button>
+                    <button type="button" onclick="addNewOne()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+        ** this is the structure from the image **
+        ** moving on to css **
+    -->
+    
     <script src="/apps/scripts/script.js"></script>
 </body>
 </html>
