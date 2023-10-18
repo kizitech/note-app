@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Open-Sans", sans-serif;
     box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --orange: #ffa500;
+    --dark-white: #7c7c7c;
+    --light-white: #e6e6e6;
 }
 
 body {
@@ -10,34 +20,70 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
+}
+
+body::-webkit-scrollbar {
+    width: 0.325em;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 1em;
+    border-radius: 2em;
+    background-color: #dbdbdb;
+}
+
+body:hover,
+body:focus {
+    overflow-y: auto;
 }
 
 .header {
     height: 100%;
     width: 20%;
     padding: 30px 10px;
-    overflow-y: auto;
     flex-shrink: 0;
+    overflow-y: hidden;
+    position: fixed;
+    z-index: 100;
+    background: var(--white);
+    box-shadow: 0 1em 2em rgba(96, 95, 95, 0.767);
+}
+
+.header::-webkit-scrollbar{
+    width: 0.325em;
+}
+
+.header::-webkit-scrollbar-thumb{
+    width: 1em;
+    border-radius: 2em;
+    background-color: #dbdbdb;
+}
+
+.header:hover,
+.header:focus {
+    overflow-y: auto;
 }
 
 .profile {
     width: 100%;
     overflow: hidden;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--light-white);
 }
 
 .profile-img {
     width: 150px;
     height: 150px;
-    background-color: orange;
+    background-color: var(--light-white);
     border-radius: 50%;
     margin: 0 auto 20px;
 }
 
 .username-text {
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 800;
+    font-size: 1.4rem;
     padding: 0 20px;
 }
 
@@ -48,14 +94,15 @@ body {
     font-size: 13px;
     font-weight: bold;
     align-items: center;
-    padding: 0 20px;
+    padding: 0.5em 20px;
+    justify-content: end;
 }
 
 .profile-rank span {
-    width: 15px;
-    height: 15px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background-color: orange;
+    background-color: var(--orange);
     display: inline-block;
     margin-right: 5px;
 }
@@ -66,15 +113,16 @@ body {
 }
 
 .folders li {
-    padding: 8px 20px;
+    padding: 0.6em 20px;
     font-weight: bold;
-    color: rgb(124, 124, 124);
+    color: var(--dark-white);
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     height: 20px;
     box-sizing: content-box;
+    transition: all 250ms ease-out;
 }
 
 .folders span {
@@ -82,8 +130,11 @@ body {
 }
 
 .folders li:hover {
-    background-color: rgb(219, 219, 219);
-    color: #000;
+    font-weight: 900;
+    font-size: 1.3rem;
+    background-color: #f7f7f7;
+    color: var(--black);
+    padding-left: 1.5em;
 }
 
 .folders li i {
@@ -101,7 +152,9 @@ body {
 
 .categories li {
     padding: 8px 20px;
-    font-weight: bold;
+    font-weight: 200;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -110,67 +163,109 @@ body {
 
 .categories li span {
     display: inline-block;
-    color: rgb(124, 124, 124);
     line-height: 19px;
+    color: var(--black);
 }
 
 .categories li:hover {
-    background-color: rgb(219, 219, 219);
+    background-color: #f7f7f7;
 }
 
 .categories li:hover span {
-    color: #000;
+    color: var(--black);
 }
 
 .categories-label {
     width: 19px;
     height: 19px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     border-style: solid;
-    border-width: 5px;
+    /* border-width: 5px; */
     display: inline-block;
     margin-right: 10px;
 }
 
 .categories-label.dark-blue {
-    border-color: rgb(3, 20, 117);
+    border-color: #5e5ce6;
 }
 
 .categories-label.dark-yellow {
-    border-color: rgb(174, 177, 11);
+    border-color: #30d158;
 }
 
 .categories-label.cyan {
-    border-color: rgb(3, 189, 189);
+    border-color: #63e6e2;
 }
 
 .categories-label.deep-red {
-    border-color: rgb(138, 4, 48);
+    border-color: #bf5af2;
 }
 
 .logout-btn {
     font-weight: bold;
-    color: rgb(124, 124, 124);
+    color: var(--dark-white);
     padding: 0 20px;
     margin-top: 50px;
     font-size: 15px;
 }
 
-.app {
-    background-color: rgb(230, 230, 230);
+/* .app {
+    gap: 2em;
+    background-color: var(--light-white);
     height: 100%;
     width: 80%;
-    /* width: 25%; */
-    padding: 30px 20px 0;
+    padding: 15% 20px 0;
     overflow-y: auto;
     flex-shrink: 0;
     transition: .5s;
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} */
+
+.app {
+    gap: 2em;
+    width: 80%;
+    display: grid;
+    flex-shrink: 0;
+    margin-left: 20%;
+    min-height: 230%;
+    position: relative;
+    padding: 10em 2em 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--light-white);
 }
 
+@media (max-width: 900px) {
+    .app {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .app {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* @media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr 1fr;
+    }
+} */
+
+/* @media (max-width: 768px) {
+    .app {
+        grid-template-columns: 1fr 1fr;
+    }
+} */
+
 .search-bar {
+    top: 3em;
+    right: 2em;
     width: 100%;
-    position: relative;
+    position: absolute;
     height: 40px;
     margin-bottom: 30px;
     transition: .5s;
@@ -182,7 +277,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    background-color: #d1cece;
+    background-color: #dbdbdb;
     border-radius: 5px;
     position: absolute;
     right: 0;
@@ -193,63 +288,58 @@ body {
     background-color: transparent;
     outline: 0;
     border: 0;
-    color: rgb(124, 124, 124);
-    font-weight: bold;
-}
-
-.note-item-container {
     width: 100%;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    font-weight: bold;
+    color: var(--dark-white);
 }
 
 .note-item {
-    background-color: #fff;
-    padding: 10px 0;
+    background-color: var(--white);
+    padding: 0.7em 0;
     border-radius: 10px;
-    flex-basis: calc(25% - 7.5px);
     cursor: pointer;
+    gap: 1em;
+    display: flex;
     /* transition: .3s; */
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 148px;
     position: relative;
     outline-width: 3px;
     outline-style: solid;
+    flex-direction: column;
     outline-color: transparent;
 }
 
 .note-item:hover {
     /* box-shadow: 0px 0px 10px #666; */
-    /* outline-color: orange; */
+    /* outline-color: var(--orange); */
 }
 
 .note-head {
     margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 0 10px;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 0 0.8em;
 }
 
 .note-body {
     margin-bottom: 20px;
     font-size: 13px;
-    color: rgb(124, 124, 124);
+    color: var(--dark-white);
     font-weight: 600;
     line-height: 19px;
-    padding: 0 10px;
+    padding: 0 1.5em;
+    font-weight: 100;
+    /* overflow: scroll; */
+    letter-spacing: 0.0325em;
 }
 
 .note-date-and-style {
     width: 100%;
     display: flex;
-    height: 20px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 10px;
-    position: absolute;
+    padding: 0 0 0 1.5em;
     bottom: 10px;
+    position: relative;
 }
 
 .note-date-and-style span {
@@ -258,13 +348,17 @@ body {
 
 .date {
     font-size: 13px;
-    color: rgb(124, 124, 124);
+    color: var(--dark-white);
 }
 
 .style-color {
     height: 20px;
     width: 5px;
-    background-color: green;
+    right: -2px;
+    border-radius: 1em;
+    position: absolute;
+    /* background-color: #13d1fa; */
+    background-color: var(--orange);
 }
 
 .viewer {
@@ -284,7 +378,7 @@ body {
 }
 
 .viewer-header i:hover {
-    color: orange;
+    color: var(--orange);
 }
 
 .viewer-exit-btn i {
@@ -304,7 +398,7 @@ body {
     height: 20px;
     width: 30px;
     border-radius: 5px;
-    background-color: orange;
+    background-color: var(--orange);
     transition: .3s;
 }
 
@@ -332,7 +426,7 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #0000006b;
+    background-color: var(--black);
     z-index: 9;
     padding: 30px 0;
     display: none;
@@ -341,11 +435,11 @@ body {
 .editor {
     height: 100%;
     width: 900px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 10px;
     margin: auto;
     padding: 20px;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     margin-top: -900px;
     transition: .3s;
 }
@@ -384,7 +478,7 @@ body {
 .editor-body-main input {
     width: 100%;
     padding: 7px 10px;
-    outline-color: orange;
+    outline-color: var(--orange);
     margin-bottom: 15px;
     border-radius: 5px;
     border-style: solid;
@@ -401,7 +495,7 @@ body {
     border-color: #bdbdbd;
     border-width: 2px;
     border-radius: 5px;
-    outline-color: orange;
+    outline-color: var(--orange);
 }
 
 .editor-body-side {
@@ -428,8 +522,8 @@ body {
 .editor-footer-btn-container button {
     padding: 10px 30px;
     outline: none;
-    border: 2px solid orange;
-    background-color: orange;
+    border: 2px solid var(--orange);
+    background-color: var(--orange);
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
@@ -459,31 +553,23 @@ body {
     /* position: relative; */
 }
 
-.new-note-btn-container img {
+.new-note-btn-container > i {
     width: 50px;
-    background-color: orange;
-    border-radius: 5px;
+    height: 50px;
+    background-color: #ffa500;
+    border-radius: 50%;
     padding: 10px;
-    position: absolute;
+    position: fixed;
     z-index: 7;
     right: 20px;
     bottom: 20px;
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    font-size: 1.8rem;
 }
 
 /* media queries */
-
-@media screen and (max-width: 1103px) {
-    .note-item-container {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-    .note-item {
-        flex-basis: calc(33.33% - 6.67px);
-        height: 148px;
-        position: relative;
-    }
-}
 
 @media screen and (max-width: 980px) {
     .header {
@@ -495,9 +581,6 @@ body {
         z-index: 10;
         box-shadow: 0 0 10px #000;
         left: -300px;
-    }
-    .app {
-        width: 100%;
     }
 }
 
@@ -518,7 +601,7 @@ body {
         display: flex;
         align-items: center;
         padding: 0 20px;
-        background-color: #d1cece;
+        background-color: var(--light-white);
         border-radius: 5px;
         position: none;
         right: 0;
