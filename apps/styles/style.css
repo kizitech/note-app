@@ -293,53 +293,60 @@ body:focus {
     color: var(--dark-white);
 }
 
-.note-item {
-    background-color: var(--white);
-    padding: 0.7em 0;
-    border-radius: 10px;
-    cursor: pointer;
-    gap: 1em;
+.note-item-container {
+    width: 100%;
     display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.note-item {
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 5px;
+    flex-basis: calc(25% - 7.5px);
+    cursor: pointer;
     /* transition: .3s; */
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 148px;
     position: relative;
     outline-width: 3px;
     outline-style: solid;
-    flex-direction: column;
     outline-color: transparent;
 }
 
 .note-item:hover {
     /* box-shadow: 0px 0px 10px #666; */
-    /* outline-color: var(--orange); */
+    /* outline-color: orange; */
 }
 
 .note-head {
     margin-bottom: 10px;
-    font-weight: 900;
-    font-size: 1.4rem;
-    padding: 0 0.8em;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0 10px;
 }
 
 .note-body {
     margin-bottom: 20px;
     font-size: 13px;
-    color: var(--dark-white);
+    color: rgb(124, 124, 124);
     font-weight: 600;
     line-height: 19px;
-    padding: 0 1.5em;
-    font-weight: 100;
-    /* overflow: scroll; */
-    letter-spacing: 0.0325em;
+    padding: 0 10px;
 }
 
 .note-date-and-style {
     width: 100%;
     display: flex;
+    height: 20px;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 0 1.5em;
+    padding: 0 0 0 10px;
+    position: absolute;
     bottom: 10px;
-    position: relative;
 }
 
 .note-date-and-style span {
@@ -354,10 +361,7 @@ body:focus {
 .style-color {
     height: 20px;
     width: 5px;
-    right: -2px;
-    border-radius: 1em;
-    position: absolute;
-    /* background-color: #13d1fa; */
+    border-radius: 10px;
     background-color: var(--orange);
 }
 
@@ -572,6 +576,19 @@ body:focus {
 
 /* media queries */
 
+@media screen and (max-width: 1103px) {
+    .note-item-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .note-item {
+        flex-basis: calc(33.33% - 6.67px);
+        height: 148px;
+        position: relative;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .header {
         height: 100vh;
@@ -582,6 +599,47 @@ body:focus {
         z-index: 10;
         box-shadow: 0 0 10px #000;
         left: -300px;
+    }
+    .app {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .editor {
+        /* width: 674px; */
+        width: calc(100% - 60px);
+        overflow-y: hidden;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .editor-body {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .editor-body-main {
+        width: 100%;
+        padding-right: 0;
+    }
+    .editor-body-side {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .editor-body-side form {
+        display: flex;
+        align-items: center;
+    }
+    .editor-body-side form input {
+        margin: 10px 5px 10px 10px;
+    }
+    .editor-body-side form input:nth-child(1) {
+        margin: 10px 5px 10px 0;
+    }
+    .editor-footer-btn-container {
+        margin-top: -65px;
     }
 }
 
@@ -602,11 +660,51 @@ body:focus {
         display: flex;
         align-items: center;
         padding: 0 20px;
-        background-color: var(--light-white);
+        background-color: #d1cece;
         border-radius: 5px;
         position: none;
         right: 0;
         transition: .3s;
+    }
+    .viewer {
+        height: 100%;
+        width: 100%;
+        transition: left .3s;
+        position: fixed;
+        top: 0;
+        left: 100%;
+    }
+    .editor-container {
+        padding: 0;
+        height: 100vh;
+        width: 100vw;
+        background-color: #fff;
+        display: block;
+        position: fixed;
+        left: 100%;
+        transition: .3  s;
+    }
+    .editor {
+        position: none;
+        height: 100%;
+        max-height: 100%;
+        width: 100%;
+        margin-top: 0;
+    }
+    .editor-body-main textarea {
+        height: calc(100vh - 316px);
+    }
+    .editor-footer-btn-container {
+        margin-top: -5px;
+    }
+    .new-note-btn-container {
+        position: fixed;
+        bottom: -10px;
+        right:-10px;
+        background-color: green;
+    }
+    .new-note-btn-container > i {
+        position: none;
     }
 }
 
@@ -614,6 +712,15 @@ body:focus {
     .note-item {
         flex-basis: 100%;
     }
+    .editor-footer-btn-container {
+        width: 100%;
+    }
+    .editor-footer-btn-container button {
+        display: block;
+        width: 100%;
+    }
+    .editor-footer-btn-container button:nth-child(1) {
+        margin-bottom: 5px;
+        display: none;
+    }
 }
-
-/* to be continued */
