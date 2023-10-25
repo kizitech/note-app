@@ -1,0 +1,444 @@
+::-webkit-scrollbar {
+    width: 0.325em;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 1em;
+    border-radius: 2em;
+    background-color: #dbdbdb;
+}
+
+.user-section {
+    /* position: relative; */
+    background: #ffffff;
+    min-height: 100vh;
+    top: 0;
+    width: 100%;
+    padding-left: 78px;
+    transition: all 0.5s ease;
+    z-index: 2;
+}
+
+/* .sidebar.open~.user-section {
+    left: 0px;
+    width: calc(100% - 250px);
+} */
+
+.user-section .text {
+    display: inline-block;
+    color: #ffa500;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px
+}
+
+.auto-grid {
+    gap: 1rem;
+    padding: 3em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+
+:root {
+    --main-color: #ffa500;
+    --secondary-color: #4A4A4A;
+    --link-color: #ffa500;
+    --link-color-hover: #ffa600aa;
+    --link-color-active: #fff;
+    --link-color-active-bg: #ffa500;
+    --projects-section: #fff;
+    --more-list-bg: #fff;
+    --more-list-bg-hover: #f6fbff;
+    --more-list-shadow: rgba(209, 209, 209, 0.4);
+    --button-bg: #ffa500;
+    --search-area-bg: #fff;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+.app-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: 0.2s;
+}
+
+.app-container button,
+.app-container input,
+.app-container optgroup,
+.app-container select,
+.app-container textarea {
+    font-family: "DM Sans", sans-serif;
+}
+
+.app-content {
+    display: flex;
+    height: 100%;
+    margin-left: 260px;
+    /* overflow: hidden; */
+}
+
+.app-header {
+    display: flex;
+    margin-bottom: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon {
+    width: 26px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.app-icon:before,
+.app-icon:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.app-icon:before {
+    top: -6px;
+}
+
+.app-icon:after {
+    bottom: -6px;
+}
+
+.app-name {
+    color: var(--main-color);
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    margin: 0 32px;
+}
+
+.search-wrapper {
+    background-color: var(--search-area-bg);
+    padding-right: 13px;
+    height: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 30em;
+    box-shadow: 0 0px 8px 0 #d18c0c7f;
+    overflow: hidden;
+    border-radius: 3em;
+    border: 1px solid var(--main-color);
+}
+
+.search-wrapper:hover {
+    box-shadow: none;
+}
+
+.search-wrapper:active {
+    border: 2px solid var(--main-color);
+}
+
+.search-input {
+    flex: 1;
+    color: #000;
+    outline: none;
+    height: 100%;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    background-color: var(--search-area-bg);
+}
+
+.projects-section {
+    flex: 2;
+    background: #f9f7f7;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 1em;
+}
+
+.projects-section-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 32px;
+    padding-inline: 2em;
+}
+
+.projects-status {
+    display: flex;
+}
+
+.item-status {
+    display: flex;
+    align-items: baseline;
+    transition: all 0.3s ease-in;
+    border-bottom: 1.2px solid var(--main-color);
+}
+
+.item-status .status-type:after {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transform: translatey(-50%);
+    border: 1px solid var(--secondary-color);
+}
+
+.status-number {
+    font-size: 1.8rem;
+    line-height: 32px;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.status-type {
+    font-size: 0.8rem;
+    position: relative;
+    padding-right: 0.6em;
+    color: var(--secondary-color);
+}
+
+.view-actions {
+    display: flex;
+    align-items: center;
+}
+
+.view-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    margin-left: 8px;
+    transition: 0.2s;
+}
+
+.view-btn.active {
+    background-color: var(--link-color-active-bg);
+    color: var(--link-color-active);
+}
+
+.view-btn:not(.active):hover {
+    background-color: var(--link-color-hover);
+    color: var(--link-color-active);
+}
+
+.project-boxes {
+    margin: 0 -8px;
+    overflow-y: auto;
+    background: #f9f7f7;
+}
+
+.project-boxes.jsGridView {
+    gap: 1rem;
+    display: grid;
+    padding: 3em 1em;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+}
+
+.project-boxes.jsListView {
+    gap: 1rem;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+}
+
+.project-boxes.jsListView .project-box {
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+}
+
+.project-boxes.jsListView .project-box>* {
+    margin-right: 24px;
+}
+
+.project-boxes.jsListView .note-article {
+    display: grid;
+    padding: 20px 15px 0;
+    align-items: center;
+}
+
+.project-boxes.jsListView .note-head {
+    grid-column: 1/4;
+    text-align: left;
+}
+
+.project-boxes.jsListView .note-bottom li:not(:first-child) {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+.project-box {
+    border-radius: 30px;
+}
+
+.project-box-wrapper {
+    border: none;
+    background: none;
+    transition: 0.2s;
+}
+
+
+@media screen and (max-width: 720px) {
+
+    .app-name,
+    .profile-btn span {
+        display: none;
+    }
+
+    .app-header {
+        display: grid;
+        padding: 3em 1em 0;
+        margin-inline: 0;
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    }
+
+    .add-btn,
+    .notification-btn,
+    .mode-switch {
+        width: 20px;
+        height: 20px;
+    }
+
+    .add-btn svg,
+    .notification-btn svg,
+    .mode-switch svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .projects-section {
+        overflow: auto;
+    }
+
+    .project-boxes {
+        overflow-y: visible;
+    }
+
+    .view-btn {
+        width: 1.8em;
+        height: 1.8em;
+    }
+
+    .search-input {
+        max-width: 120px;
+    }
+
+    .project-boxes.jsGridView .project-box-wrapper {
+        width: 100%;
+    }
+
+    .projects-section {
+        padding: 24px 16px 0 16px;
+    }
+
+    .profile-btn img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+}
+
+
+
+
+:root {
+    --background: #EDEEF7;
+    --gray: #EDEEF7;
+    --white: #FCFCFC;
+    --roboto: "Roboto", sans-serif;
+    --robotoCondensed: "Roboto Condensed", sans-serif;
+}
+
+#note-container {
+    gap: 16px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    border-radius: 32px;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 2.5em 0px;
+}
+
+#note-container:hover {
+    box-shadow: 0 5px 1em 0px rgba(0, 0, 0, 0.3);
+}
+
+.note-article {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 15px;
+    background-color: var(--white);
+    border-radius: 24px;
+    font-size: 16px;
+    z-index: 1;
+    align-items: start;
+    flex-direction: column;
+}
+
+.note-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    margin-left: auto;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+.note-bottom li:not(:first-child) {
+    width: 1.3em;
+    height: 1.3em;
+    padding: 1em;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background: #ffa500;
+}
+
+.note-bottom li:not(:first-child):hover {
+    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
+.note-bottom li i {
+    font-size: 1.25rem;
+    color: var(--link-color-active);
+}

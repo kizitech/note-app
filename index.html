@@ -1,354 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Note App</title>
     <link rel="stylesheet" href="/apps/styles/style.css">
+    <link rel="stylesheet" href="/apps/styles/noteBox.css">
+    <link rel="stylesheet" href="/apps/styles/textEditor.css">
     <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/x-icon">
-    
+
     <!-- link to integrate icons -->
     <script src="https://kit.fontawesome.com/1ae22d8cef.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <!-- I do not like using one individual container -->
     <div class="container">
 
-    </div>
 
-    <!-- header -->
 
-    <div class="header">
+        <!-- header -->
 
-        <!-- profile -->
-        <div class="profile">
-            <div class="profile-img">
-                <img src="/assets/images/profile-avatar.svg" alt="Profile Image" title="Avatar">
-            </div>
-            <div class="username-text">
-                Ogheneserome Aramiyor
-            </div>
-            <div class="profile-rank">
-                <span></span><p>Admin</p>
-            </div>
-        </div>
+        <div class="header">
 
-        <!-- folders -->
-        <div class="folders">
-            <li><i class="fa-solid fa-house"></i><span>Home</span></li>
-            <li><i class="fa-solid fa-star"></i><span>Stared</span></li>
-            <li><i class="fa-solid fa-file-pen"></i><span>Drafts</span></li>
-            <li><i class="fa-solid fa-trash"></i><span>Trash</span></li>
-        </div>
-
-        <!-- categories -->
-        <div class="categories">
-            <li><span class="categories-label dark-blue"></span><span>Personal</span></li>
-            <li><span class="categories-label dark-yellow"></span><span>Work</span></li>
-            <li><span class="categories-label cyan"></span><span>Family</span></li>
-            <li><span class="categories-label deep-red"></span><span>Others</span></li>
-        </div>
-        <div class="logout-btn">
-            LOGOUT
-        </div>
-    </div>
-
-    <!-- app -->
-
-    <div class="app">
-
-        <!-- note search bar -->
-        <div class="search-bar">
-            <form>
-                <input type="search" placeholder="Search">
-                <!-- search icon -->
-            </form>
-        </div>
-
-        <!-- note container -->
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
+            <!-- profile -->
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="/assets/images/profile-avatar.svg" alt="Profile Image" title="Avatar">
                 </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
+                <div class="username-text">
+                    Ogheneserome Aramiyor
                 </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
+                <div class="profile-rank">
+                    <span></span>
+                    <p>Admin</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
 
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
+            <!-- folders -->
+            <div class="folders">
+                <li><i class="fa-solid fa-house"></i><span>Home</span></li>
+                <li><i class="fa-solid fa-star"></i><span>Stared</span></li>
+                <li><i class="fa-solid fa-file-pen"></i><span>Drafts</span></li>
+                <li><i class="fa-solid fa-trash"></i><span>Trash</span></li>
             </div>
-        </div>
 
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
+            <!-- categories -->
+            <div class="categories">
+                <li><span class="categories-label dark-blue"></span><span>Personal</span></li>
+                <li><span class="categories-label dark-yellow"></span><span>Work</span></li>
+                <li><span class="categories-label cyan"></span><span>Family</span></li>
+                <li><span class="categories-label deep-red"></span><span>Others</span></li>
             </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
-            </div>
-        </div>
-
-        <div class="note-item-container" id="random">
-            <div class="note-item">
-                <div class="note-head">
-                    Wow
-                </div>
-                <div class="note-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, in. Quasi deserunt earum numquam animi.
-                </div>
-                <div class="note-date-and-style">
-                    <span class="date">2 sec ago</span>
-                    <span class="style-color"></span>
-                </div>
+            <div class="logout-btn">
+                LOGOUT <span><i class="fa-solid fa-right-from-bracket"></i></span>
             </div>
         </div>
 
         <!-- add new note btn -->
-        <div class="new-note-btn-container" title="Add New Note">
+        <div class="new-note-btn-container" id="add-note" onclick="openEditor()" title="Add New Note">
             <i class="fa-solid fa-plus fa-bounce"></i>
         </div>
-        
+
     </div>
 
+
+
+    <!-- NOTE CONTAINERS -->
+    <div class="app-content">
+        <div class="projects-section">
+            <div class="app-header">
+                <div class="search-wrapper">
+                    <input type="text" value="" class="search-input" id="user-search-input" placeholder="Search for note..">
+                    <img src="/assets/images/search-icon.svg" alt="search icon">
+                </div>
+            </div>
+            <div class="projects-section-line">
+                <div class="projects-status">
+                    <div class="item-status">
+                        <span class="status-type">Total Number Of Notes:</span>
+                        <span class="status-number" id="total-notes-count"></span>
+                    </div>
+                </div>
+
+                <div class="view-actions">
+                    <button class="view-btn list-view" title="List View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-list">
+                            <line x1="8" y1="6" x2="21" y2="6" />
+                            <line x1="8" y1="12" x2="21" y2="12" />
+                            <line x1="8" y1="18" x2="21" y2="18" />
+                            <line x1="3" y1="6" x2="3.01" y2="6" />
+                            <line x1="3" y1="12" x2="3.01" y2="12" />
+                            <line x1="3" y1="18" x2="3.01" y2="18" />
+                        </svg>
+                    </button>
+                    <button class="view-btn grid-view active" title="Grid View">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-grid">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="project-boxes jsGridView" id="projectBoxes"></div>
+        </div>
+    </div>
+
+
+    <!-- KIZITO EDITOR  -->
+    <section class="editor-modal" id="editor-modal">
+        <span class="close-editor" title="Close Editor"><i class="fa-solid fa-xmark"></i></span>
+        <!-- TEXT EDITOR -->
+        <div class="editor__container">
+            <div class="options">
+                <!-- Text Format -->
+                <button id="bold" class="option-button format">
+                    <i class="fa-solid fa-bold"></i>
+                </button>
+                <button id="italic" class="option-button format">
+                    <i class="fa-solid fa-italic"></i>
+                </button>
+                <button id="underline" class="option-button format">
+                    <i class="fa-solid fa-underline"></i>
+                </button>
+                <button id="strikethrough" class="option-button format">
+                    <i class="fa-solid fa-strikethrough"></i>
+                </button>
+                <button id="superscript" class="option-button script">
+                    <i class="fa-solid fa-superscript"></i>
+                </button>
+                <button id="subscript" class="option-button script">
+                    <i class="fa-solid fa-subscript"></i>
+                </button>
+    
+                <!-- List -->
+                <button id="insertOrderedList" class="option-button">
+                    <div class="fa-solid fa-list-ol"></div>
+                </button>
+                <button id="insertUnorderedList" class="option-button">
+                    <i class="fa-solid fa-list"></i>
+                </button>
+    
+                <!-- Undo/Redo -->
+                <button id="undo" class="option-button">
+                    <i class="fa-solid fa-rotate-left"></i>
+                </button>
+                <button id="redo" class="option-button">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+    
+                <!-- Link -->
+                <button id="createLink" class="adv-option-button">
+                    <i class="fa fa-link"></i>
+                </button>
+                <button id="unlink" class="option-button">
+                    <i class="fa fa-unlink"></i>
+                </button>
+    
+                <!-- Alignment -->
+                <button id="justifyLeft" class="option-button align">
+                    <i class="fa-solid fa-align-left"></i>
+                </button>
+                <button id="justifyCenter" class="option-button align">
+                    <i class="fa-solid fa-align-center"></i>
+                </button>
+                <button id="justifyRight" class="option-button align">
+                    <i class="fa-solid fa-align-right"></i>
+                </button>
+                <button id="justifyFull" class="option-button align">
+                    <i class="fa-solid fa-align-justify"></i>
+                </button>
+                <button id="indent" class="option-button spacing">
+                    <i class="fa-solid fa-indent"></i>
+                </button>
+                <button id="outdent" class="option-button spacing">
+                    <i class="fa-solid fa-outdent"></i>
+                </button>
+    
+                <!-- Headings -->
+                <select id="formatBlock" class="adv-option-button">
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="H4">H4</option>
+                    <option value="H5">H5</option>
+                    <option value="H6">H6</option>
+                </select>
+    
+                <!-- Font -->
+                <select id="fontName" class="adv-option-button"></select>
+                <select id="fontSize" class="adv-option-button"></select>
+    
+                <!-- Color -->
+                <div class="input-wrapper">
+                    <input type="color" id="foreColor" class="adv-option-button" />
+                    <label for="foreColor">Font Color</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="color" id="backColor" class="adv-option-button" />
+                    <label for="backColor">Highlight Color</label>
+                </div>
+            </div>
+            <div id="text-input" contenteditable="true"></div>
+        </div>
+    </section>
     <!-- viewer -->
 
-    <div class="viewer">
+    <!-- <div class="viewer">
 
-        <!-- viewer-header -->
+        viewer-header -----remove -----
         <div class="viewer-header">
             <div class="viewer-exit-btn">
                 <i class="fa-solid fa-arrow-left main-exit-btn"></i>
@@ -361,21 +229,21 @@
             <div class="viewer-color"></div>
         </div>
 
-        <!-- viewer-content -->
+        viewer-content ---remove--------------------------------
         <div class="viewer-content">
             <div class="viewer-content-heading"></div>
             <pre class="viewer-content-paragraph"></pre>
         </div>
         <i class="fa-solid fa-pen"></i>
 
-    </div>
+    </div> -->
 
     <!-- editor -->
 
-    <div class="editor-container">
+    <!-- <div class="editor-container">
         <div class="editor">
             <div class="editor-header">
-                <!-- <i class="fa-solid fa-arrow-left main-exit-btn"></i> -->
+                <i class="fa-solid fa-arrow-left main-exit-btn"></i>   --- Remove
                 <span>Add Note</span>
                 <span><--</span>
             </div>
@@ -404,13 +272,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--
         ** this is the structure from the image **
         ** moving on to css **
     -->
-    
     <script src="/apps/scripts/script.js"></script>
+    <script src="/apps/scripts/noteBox.js"></script>
+    <script src="/apps/scripts/textEditor.js"></script>
+    <script src="/data/noteData.js"></script>
 </body>
+
 </html>
