@@ -84,6 +84,18 @@ const notesData = [
         "time": "3 seconds ago",
     },
 
+    {
+        "heading": "Wow wow",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, reprehenderit doloremque omnis temporibus iure cum!",
+        "time": "3 seconds ago",
+    },
+
+    {
+        "heading": "Wow",
+        "content": "Lorem ipsum yes dolor sit amet consectetur adipisicing elit. Quae, reprehenderit doloremque omnis temporibus iure cum!",
+        "time": "3 seconds ago",
+    },
+
 ];
 
 
@@ -103,7 +115,7 @@ function displayNotes(notes) {
                             </div>
                             <ul class="note-bottom">
                                 <li class="note-bottom-time">${note.time}</li>
-                                <li title="Open Note"><i class="fa-regular fa-folder-open"></i></li>
+                                <li title="Delete note"><i class="fa-solid fa-trash-can"></i></li>
                             </ul>
                         </article>
                     </div>

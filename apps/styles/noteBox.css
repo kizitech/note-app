@@ -188,6 +188,7 @@ a {
 
 .item-status {
     display: flex;
+    user-select: none;
     align-items: baseline;
     transition: all 0.3s ease-in;
     border-bottom: 1.2px solid var(--main-color);
@@ -215,7 +216,7 @@ a {
 .status-type {
     font-size: 0.8rem;
     position: relative;
-    padding-right: 0.6em;
+    padding-inline: 0.6em;
     color: var(--secondary-color);
 }
 

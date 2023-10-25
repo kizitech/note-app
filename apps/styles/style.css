@@ -3,8 +3,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Open-Sans", sans-serif;
     box-sizing: border-box;
+    font-family: "Open-Sans", sans-serif;
 }
 
 :root {
@@ -48,6 +48,7 @@ body:focus {
     overflow-y: hidden;
     position: fixed;
     z-index: 100;
+    user-select: none;
     background: var(--white);
     box-shadow: 0 1em 2em rgba(96, 95, 95, 0.767);
 }
@@ -213,6 +214,7 @@ body:focus {
 }
 
 .logout-btn span {
+    cursor: pointer;
     transform: rotate(180deg);
 }
 
@@ -561,6 +563,7 @@ body:focus {
 .new-note-btn-container {
     /* width: 100%; */
     cursor: pointer;
+    z-index: 100;
     /* position: relative; */
 }
 
@@ -709,9 +712,6 @@ body:focus {
         bottom: -10px;
         right:-10px;
         background-color: green;
-    }
-    .new-note-btn-container > i {
-        position: none;
     }
 }
 
