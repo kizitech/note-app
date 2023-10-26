@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #ffa500;
+    --text-color: #4A4A4A;
+    --secondary-color: #ffa600aa;
+    --background-color: #fff;
+    --accent-color: #f6fbff;
+    --border-color: #d1d1d166;
+    --header-color: #EDEEF7;
+    --footer-color: #FCFCFC;
+    --black: #000000;
+    --white: #ffffff;
+    --dark-gray: #7c7c7c;
+    --light-gray: #e6e6e6;
+    --transparent-gray: #605f5fc4;
+    --extra-light-gray: #dbdbdb;
+    --green: #30d158;
+    --blue: #63e6e2;
+    --purple: #bf5af2;
+    --dark-blue: #5e5ce6;
+    --lighter-gray: #8b8b8b;
+    --ultra-light-gray: #bdbdbd;
+    --dark-black: #000000c4;
+    --gray-border: #d1cece;
+    --light-border: #0000000d;
+    --orange: #d18c0c7f;
+    --more-light-gray: #f9f7f7;
+    --darker-transparent-black: #0000004d;
+    --even-darker-black: #00000066;
+    --darkest-black: #07142333;
+    --navy-blue: #020929;
+    --lighter-gray-border: #dddddd;
+    --semi-transparent-orange: #ffa60037;
+}
+
+
+/* :root {
+    --primary-color: #ffa500;
+    --text-color: #ffffff;
+    --secondary-color: #5a5a5a;
+    --background-color: #111111;
+    --accent-color: #3d3d3d;
+    --border-color: #353535;
+    --header-color: #050505;
+    --footer-color: #0c0c0c;
+    --black: #ffffff;
+    --white: #000000;
+    --dark-gray: #bdbdbd;
+    --light-gray: #333333;
+    --transparent-gray: #605f5fc4;
+    --extra-light-gray: #2a2a2a;
+    --green: #30d158;
+    --blue: #63e6e2;
+    --purple: #bf5af2;
+    --lighter-gray: #8b8b8b;
+    --ultra-light-gray: #1f1f1f;
+    --dark-black: #000000c4;
+    --darker-black: #0000004d;
+    --gray-border: #1d1d1d;
+    --light-border: #0000000d;
+    --orange: #d18c0c7f;
+    --more-light-gray: #262626;
+    --darker-transparent-black: #0000004d;
+    --even-darker-black: #00000066;
+    --darkest-black: #000000;
+    --navy-blue: #000d23;
+    --lighter-gray-border: #444444;
+    --semi-transparent-orange: #ffa60037;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open-Sans", sans-serif;
+}
+
+body {
+    font-size: 100%;
+    width: 100%;
+    height: 100vh;
+    /* display: flex; */
+    overflow: auto;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    width: 0.325em;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 1em;
+    border-radius: 2em;
+    background-color: var(--extra-light-gray);
+}
+
+button,
+a {
+    cursor: pointer;
+}

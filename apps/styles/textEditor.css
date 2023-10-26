@@ -1,13 +1,13 @@
 .editor-modal {
     position: fixed;
     z-index: 1000;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--darker-transparent-black);
     height: 100vh;
     width: 100%;
     inset: 0;
     opacity: 0;
     display: none;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     transition: opacity 0.3s ease-out;
 }
 
@@ -33,7 +33,7 @@
     left: 50%;
     top: 50%;
     border-radius: 10px;
-    box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+    box-shadow: 0 25px 50px var(--darkest-black);
 }
 
 .editor__container .options {
@@ -52,12 +52,12 @@
     border: none;
     background-color: #ffffff;
     outline: none;
-    color: #020929;
+    color: var(--navy-blue);
 }
 
 .editor__container select {
     padding: 7px;
-    border: 1px solid #020929;
+    border: 1px solid var(--navy-blue);
     border-radius: 3px;
 }
 
@@ -85,21 +85,43 @@
 
 .editor__container input[type="color"]::-webkit-color-swatch {
     border-radius: 15px;
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px var(--navy-blue);
 }
 
 .editor__container input[type="color"]::-moz-color-swatch {
     border-radius: 15px;
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px var(--navy-blue);
 }
 
 .editor__container #text-input {
     margin-top: 10px;
-    border: 1px solid #dddddd;
+    border: 1px solid var(--lighter-gray-border);
     padding: 20px;
     height: 50vh;
 }
 
 .editor__container .active {
-    background-color: #ffa60037;
+    background-color: var(--semi-transparent-orange);
+}
+
+.editor-btn {
+    width: 100%;
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: end;
+}
+
+.editor-btn input {
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 1em 2em;
+    border-radius: 3px;
+    background-color: var(--primary-color);
+}
+
+.editor-btn input:hover {
+    opacity: 0.7;
 }

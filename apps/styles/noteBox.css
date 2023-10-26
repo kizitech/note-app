@@ -5,7 +5,7 @@
 ::-webkit-scrollbar-thumb {
     width: 1em;
     border-radius: 2em;
-    background-color: #dbdbdb;
+    background-color: var(--extra-light-gray);
 }
 
 .user-section {
@@ -26,7 +26,7 @@
 
 .user-section .text {
     display: inline-block;
-    color: #ffa500;
+    color: var(--primary-color);
     font-size: 25px;
     font-weight: 500;
     margin: 18px
@@ -40,28 +40,6 @@
 }
 
 
-
-@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
-
-:root {
-    --main-color: #ffa500;
-    --secondary-color: #4A4A4A;
-    --link-color: #ffa500;
-    --link-color-hover: #ffa600aa;
-    --link-color-active: #fff;
-    --link-color-active-bg: #ffa500;
-    --projects-section: #fff;
-    --more-list-bg: #fff;
-    --more-list-bg-hover: #f6fbff;
-    --more-list-shadow: rgba(209, 209, 209, 0.4);
-    --button-bg: #ffa500;
-    --search-area-bg: #fff;
-}
-
-button,
-a {
-    cursor: pointer;
-}
 
 .app-container {
     width: 100%;
@@ -97,7 +75,7 @@ a {
     width: 26px;
     height: 2px;
     border-radius: 4px;
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
     position: relative;
 }
 
@@ -108,7 +86,7 @@ a {
     width: 12px;
     height: 2px;
     border-radius: 4px;
-    background-color: var(--main-color);
+    background-color: var(--primary-color);
     left: 50%;
     transform: translatex(-50%);
 }
@@ -122,7 +100,7 @@ a {
 }
 
 .app-name {
-    color: var(--main-color);
+    color: var(--primary-color);
     margin: 0;
     font-size: 20px;
     line-height: 24px;
@@ -131,7 +109,7 @@ a {
 }
 
 .search-wrapper {
-    background-color: var(--search-area-bg);
+    background-color: var(--background-color);
     padding-right: 13px;
     height: 3em;
     display: flex;
@@ -139,10 +117,10 @@ a {
     align-items: center;
     width: 100%;
     max-width: 30em;
-    box-shadow: 0 0px 8px 0 #d18c0c7f;
+    box-shadow: 0 0px 8px 0 var(--orange);
     overflow: hidden;
     border-radius: 3em;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--primary-color);
 }
 
 .search-wrapper:hover {
@@ -150,7 +128,7 @@ a {
 }
 
 .search-wrapper:active {
-    border: 2px solid var(--main-color);
+    border: 2px solid var(--primary-color);
 }
 
 .search-input {
@@ -161,7 +139,7 @@ a {
     border: none;
     padding: 15px;
     font-size: 16px;
-    background-color: var(--search-area-bg);
+    background-color: var(--background-color);
 }
 
 .projects-section {
@@ -191,7 +169,7 @@ a {
     user-select: none;
     align-items: baseline;
     transition: all 0.3s ease-in;
-    border-bottom: 1.2px solid var(--main-color);
+    border-bottom: 1.2px solid var(--primary-color);
 }
 
 .item-status .status-type:after {
@@ -203,14 +181,14 @@ a {
     height: 6px;
     border-radius: 50%;
     transform: translatey(-50%);
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--text-color);
 }
 
 .status-number {
     font-size: 1.8rem;
     line-height: 32px;
     font-weight: 700;
-    color: var(--main-color);
+    color: var(--primary-color);
 }
 
 .status-type {
@@ -218,6 +196,28 @@ a {
     position: relative;
     padding-inline: 0.6em;
     color: var(--secondary-color);
+}
+
+.star-checkbox input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.star-checkbox label {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.star-checkbox input:checked+label svg {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    transition: 0.2s;
 }
 
 .view-actions {
@@ -235,19 +235,19 @@ a {
     border-radius: 4px;
     background-color: transparent;
     border: none;
-    color: var(--main-color);
+    color: var(--primary-color);
     margin-left: 8px;
     transition: 0.2s;
 }
 
 .view-btn.active {
-    background-color: var(--link-color-active-bg);
-    color: var(--link-color-active);
+    background-color: var(--primary-color);
+    color: var(--white);
 }
 
 .view-btn:not(.active):hover {
-    background-color: var(--link-color-hover);
-    color: var(--link-color-active);
+    background-color: var(--secondary-color);
+    color: var(--white);
 }
 
 .project-boxes {
@@ -286,10 +286,10 @@ a {
     align-items: center;
 }
 
-.project-boxes.jsListView .note-head {
+/* .project-boxes.jsListView .note-head {
     grid-column: 1/4;
     text-align: left;
-}
+} */
 
 .project-boxes.jsListView .note-bottom li:not(:first-child) {
     position: absolute;
@@ -432,14 +432,15 @@ a {
     border-radius: 50%;
     align-items: center;
     justify-content: center;
-    background: #ffa500;
+    background: var(--primary-color);
+    box-shadow: 0px 2px 0.3em rgba(0, 0, 0, 0.4);
 }
 
-.note-bottom li:not(:first-child):hover {
-    box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+.note-bottom li:not(:first-child):active {
+    box-shadow: none;
 }
 
 .note-bottom li i {
     font-size: 1.25rem;
-    color: var(--link-color-active);
+    color: var(--white);
 }
