@@ -445,7 +445,6 @@
         position: absolute;
         z-index: 10;
         box-shadow: 0 0 10px #000;
-        left: -300px;
     }
     .app {
         width: 100%;
